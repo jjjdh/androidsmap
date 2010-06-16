@@ -27,7 +27,7 @@ public class SMapMain extends MapActivity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// TODO Auto-generated method stub
-		menu.add(0, MENU_CALENDAR, 0, getString(R.string.calendar));
+		menu.add(1, MENU_CALENDAR, 0, getString(R.string.calendar));
 		return super.onCreateOptionsMenu(menu);
 	}
 }
