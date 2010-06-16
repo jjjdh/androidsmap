@@ -2,4 +2,5 @@
 <resources>
     <string name="hello">Hello World, SMapMain!</string>
     <string name="app_name">SMap</string>
+    <string name="calendar">Google Calendar</string>
 </resources>
