@@ -1,6 +1,7 @@
 package com.sds.android.smap;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.widget.TextView;
 
@@ -15,6 +16,7 @@ public class SMapMain extends MapActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        Log.e("wpw", "Wow");
     }
 
 	@Override
