@@ -4,10 +4,48 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
-<TextView  
-	android:id="@+id/text1"	
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@string/hello"
-    />
+    
+    <com.google.android.maps.MapView
+	    xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:id="@+id/mapview"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:clickable="true"
+	    android:apiKey="0m-f9eWbfaxrelBDN7ERFzOkILISsjcXbMBlP1g"
+	    android:layout_weight="1"
+		/>
+   	<LinearLayout  
+		android:id="@+id/text2"	
+	    android:layout_width="fill_parent" 
+	    android:layout_height="150dip"
+	    android:layout_weight="1"
+	    android:orientation="horizontal"
+	    android:background="#ff0000"
+	    >
+		<ImageView 
+			android:id="@+id/calendar"
+			android:src="@drawable/calendar"
+			android:layout_width="fill_parent" 
+		    android:layout_height="fill_parent"
+		    android:layout_weight="1"
+		    />	    
+		<ImageView 
+			android:id="@+id/contact"
+			android:src="@drawable/contact"
+			android:layout_width="fill_parent" 
+		    android:layout_height="fill_parent"
+		    android:layout_weight="1"/>	    
+		<ImageView 
+			android:id="@+id/food"
+			android:src="@drawable/food"
+			android:layout_width="fill_parent" 
+		    android:layout_height="fill_parent"
+		    android:layout_weight="1"/>	    
+		<ImageView 
+			android:id="@+id/photo"
+			android:src="@drawable/photo"
+			android:layout_width="fill_parent" 
+		    android:layout_height="fill_parent"
+		    android:layout_weight="1"/>	    
+	</LinearLayout>	    
 </LinearLayout>
