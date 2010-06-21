@@ -3,7 +3,6 @@ package com.sds.android.smap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
-import android.widget.TextView;
 
 import com.google.android.maps.MapActivity;
 
