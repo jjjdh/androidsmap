@@ -2,27 +2,28 @@ package com.sds.android.smap.map;
 
 import android.graphics.drawable.Drawable;
 
-import com.google.android.maps.ItemizedOverlay;
+import com.google.android.maps.GeoPoint;
 import com.google.android.maps.OverlayItem;
 
-public class ContactItemizedOverlay extends ItemizedOverlay<OverlayItem>{
+public class ContactItemizedOverlay extends SMapItemizedOverlay{
 
-	private static Drawable defaultMarker = null;
+
+	public ContactItemizedOverlay(Drawable marker) {
+		super(boundCenterBottom(marker));
+		
+		//overlay 생성후 넣는 작업
+		GeoPoint point = new GeoPoint(21242000, -89121000);
+		OverlayItem overlayitem = new OverlayItem(point, "", "");
+		addOverlay(overlayitem);
+	}
+
+	@Override
+	protected void onIconTap(int index) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
-	public ContactItemizedOverlay() {
-		super(defaultMarker);
-	}
 
-	@Override
-	protected OverlayItem createItem(int i) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 }

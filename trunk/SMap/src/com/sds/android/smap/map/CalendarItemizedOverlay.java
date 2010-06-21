@@ -1,29 +1,27 @@
 package com.sds.android.smap.map;
 
-
 import android.graphics.drawable.Drawable;
 
-import com.google.android.maps.ItemizedOverlay;
+import com.google.android.maps.GeoPoint;
 import com.google.android.maps.OverlayItem;
 
-public class CalendarItemizedOverlay extends ItemizedOverlay<OverlayItem>{
+public class CalendarItemizedOverlay extends SMapItemizedOverlay{
 	
-	private static Drawable defaultMarker = null;
 	
-	public CalendarItemizedOverlay(){
-		super(defaultMarker);
+	public CalendarItemizedOverlay(Drawable marker){
+		super(boundCenterBottom(marker));
+		
+		//overlay 생성후 넣는 작업
+		GeoPoint point = new GeoPoint(19242000, -99121000);
+		OverlayItem overlayitem = new OverlayItem(point, "", "");
+		addOverlay(overlayitem);
 	}
 
 	@Override
-	protected OverlayItem createItem(int i) {
+	protected void onIconTap(int index) {
 		// TODO Auto-generated method stub
-		return null;
+		
 	}
-
-	@Override
-	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	
 
 }
