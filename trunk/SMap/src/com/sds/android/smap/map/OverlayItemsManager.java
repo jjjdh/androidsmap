@@ -70,7 +70,7 @@ public class OverlayItemsManager {
 			currentOverlay = cacheMap.get(String.valueOf(id));
 		}else{
 			Drawable drawable = getDrawable(id);
-			currentOverlay =  ItemizedOverlayFactory.create(id,drawable);
+			currentOverlay =  ItemizedOverlayFactory.create(caller.getApplicationContext(),id,drawable);
 			Log.d("kshgizmo","create "+currentOverlay.getClass().getSimpleName());
 		}
 		currentId = id;
