@@ -65,7 +65,7 @@ public class OverlayItemsManager {
 			mapOverlays.remove(currentOverlay);
 		}
 		
-		if(cacheMap.containsKey(String.valueOf(id)) && !isChaged()){
+		if(cacheMap.containsKey(String.valueOf(id)) && !isChanged()){
 			Log.d("kshgizmo","get "+currentOverlay.getClass().getSimpleName());
 			currentOverlay = cacheMap.get(String.valueOf(id));
 		}else{
@@ -78,7 +78,7 @@ public class OverlayItemsManager {
 		mapView.invalidate();
 	}
 	
-	private boolean isChaged() {
+	private boolean isChanged() {
 		//OverLay 가 변경된경우 true 를 리턴한다.
 		return false;
 	}
