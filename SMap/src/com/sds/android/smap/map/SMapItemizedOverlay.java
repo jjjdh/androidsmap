@@ -2,6 +2,7 @@ package com.sds.android.smap.map;
 
 import java.util.ArrayList;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
@@ -18,10 +19,12 @@ public abstract class SMapItemizedOverlay extends ItemizedOverlay<OverlayItem> {
 	
 	private ArrayList<OverlayItem> mOverlays = new ArrayList<OverlayItem>();
 	protected Context mContext;
+	protected Activity caller;
 	
-	public SMapItemizedOverlay(Context context,Drawable defaultMarker) {
+	public SMapItemizedOverlay(Activity caller,Drawable defaultMarker) {
 		super(boundCenterBottom(defaultMarker));
-		this.mContext = context;
+		this.caller = caller;
+		this.mContext = caller.getApplicationContext();
 	}
 
 	public void addOverlay(OverlayItem overlay) {

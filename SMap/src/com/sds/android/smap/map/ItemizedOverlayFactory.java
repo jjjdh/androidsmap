@@ -1,5 +1,6 @@
 package com.sds.android.smap.map;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 
@@ -8,17 +9,17 @@ import com.google.android.maps.OverlayItem;
 import com.sds.android.smap.R;
 
 public class ItemizedOverlayFactory {
-	public static ItemizedOverlay<OverlayItem> create(Context context,int id,Drawable marker){
+	public static ItemizedOverlay<OverlayItem> create(Activity caller,int id,Drawable marker){
 		
 		switch(id){
 		case R.id.calendar :
-			return new CalendarItemizedOverlay(context,marker);
+			return new CalendarItemizedOverlay(caller,marker);
 		case R.id.contact :
-			return new ContactItemizedOverlay(context,marker);
+			return new ContactItemizedOverlay(caller,marker);
 		case R.id.food :
-			return new FoodItemizedOverlay(context,marker);
+			return new FoodItemizedOverlay(caller,marker);
 		case R.id.photo :
-			return new PhotoItemizedOverlay(context,marker);
+			return new PhotoItemizedOverlay(caller,marker);
 		default :
 			return null;
 		}
