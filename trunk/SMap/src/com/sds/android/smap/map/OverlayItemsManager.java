@@ -9,6 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.util.Log;
 
 import com.google.android.maps.ItemizedOverlay;
+import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
 import com.google.android.maps.Overlay;
 import com.google.android.maps.OverlayItem;
@@ -22,11 +23,11 @@ public class OverlayItemsManager {
 	ItemizedOverlay<OverlayItem> currentOverlay = null;
 	int currentId ;
 	HashMap<String,ItemizedOverlay<OverlayItem>> cacheMap = new HashMap<String,ItemizedOverlay<OverlayItem>>();
-	Context caller;
+	Activity caller;
 	MapView mapView;
 	List<Overlay> mapOverlays;
 	HashMap<String, Drawable> drawableMap;
-	
+	 MapController controller ;
 
 	public OverlayItemsManager() {
 
@@ -43,6 +44,8 @@ public class OverlayItemsManager {
 		
 		mapOverlays = mapView.getOverlays();
 
+		controller = mapView.getController();
+		controller.setZoom(1);
 	}
 	
 	private void initDrawable() {
@@ -70,7 +73,7 @@ public class OverlayItemsManager {
 			currentOverlay = cacheMap.get(String.valueOf(id));
 		}else{
 			Drawable drawable = getDrawable(id);
-			currentOverlay =  ItemizedOverlayFactory.create(caller.getApplicationContext(),id,drawable);
+			currentOverlay =  ItemizedOverlayFactory.create(caller,id,drawable);
 			Log.d("kshgizmo","create "+currentOverlay.getClass().getSimpleName());
 		}
 		currentId = id;
@@ -80,7 +83,7 @@ public class OverlayItemsManager {
 	
 	private boolean isChanged() {
 		//OverLay 가 변경된경우 true 를 리턴한다.
-		return false;
+		return true;
 	}
 
 	public ItemizedOverlay<OverlayItem> getCurrentOverlay(){

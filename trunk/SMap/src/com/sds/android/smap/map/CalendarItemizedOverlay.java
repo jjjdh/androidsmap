@@ -1,5 +1,6 @@
 package com.sds.android.smap.map;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
@@ -11,8 +12,8 @@ import com.sds.android.calendar.CalendarUtils;
 public class CalendarItemizedOverlay extends SMapItemizedOverlay{
 	
 	
-	public CalendarItemizedOverlay(Context context,Drawable marker){
-		super(context,boundCenterBottom(marker));
+	public CalendarItemizedOverlay(Activity caller,Drawable marker){
+		super(caller,boundCenterBottom(marker));
 		
 		
 		CalendarUtils util = new CalendarUtils();

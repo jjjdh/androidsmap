@@ -5,6 +5,7 @@ import android.view.Menu;
 import android.widget.ImageView;
 
 import com.google.android.maps.MapActivity;
+import com.google.android.maps.MapController;
 import com.sds.android.menu.MenuListener;
 import com.sds.android.smap.map.OverlayItemsManager;
 
@@ -19,7 +20,7 @@ public class SMapMain extends MapActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        
+       
         manager = new OverlayItemsManager(this);
         
        setMenuListnener(R.id.calendar);
