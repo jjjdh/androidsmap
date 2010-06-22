@@ -21,5 +21,8 @@
     
     <!--INTERNET Permission 지정-->
     <uses-permission android:name="android.permission.INTERNET" />
+    
+    <!-- Contact 리드 퍼미션  -->
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
 
 </manifest> 
