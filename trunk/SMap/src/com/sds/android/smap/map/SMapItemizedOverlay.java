@@ -17,11 +17,17 @@ import com.google.android.maps.OverlayItem;
 public abstract class SMapItemizedOverlay extends ItemizedOverlay<OverlayItem> {
 
 	
-	private ArrayList<OverlayItem> mOverlays = new ArrayList<OverlayItem>();
+	protected ArrayList<OverlayItem> mOverlays = new ArrayList<OverlayItem>();
 	protected Context mContext;
 	protected Activity caller;
 	
+<<<<<<< .mine
+
+	
+	public SMapItemizedOverlay(Context context,Drawable defaultMarker) {
+=======
 	public SMapItemizedOverlay(Activity caller,Drawable defaultMarker) {
+>>>>>>> .r22
 		super(boundCenterBottom(defaultMarker));
 		this.caller = caller;
 		this.mContext = caller.getApplicationContext();
