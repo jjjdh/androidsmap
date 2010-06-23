@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+  
+  <PreferenceCategory
+            android:title="어플리케이션 설정">
+            
+        <CheckBoxPreference
+                android:key="weather_preference"
+                android:title="날씨 설정"
+                android:summary="지도상에 날씨 표현 여부를 설정하세요" />
+            
+    </PreferenceCategory>
+   <PreferenceCategory
+            android:title="서버 설정">
+
+        <EditTextPreference
+                android:key="ip_preference"
+                android:title="IP 설정"
+                android:summary="서버의 아이피를 설정하세요"
+                android:dialogTitle="서버 IP 설정" />
+   </PreferenceCategory>
+   
+</PreferenceScreen>
