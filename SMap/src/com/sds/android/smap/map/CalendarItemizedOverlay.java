@@ -8,6 +8,7 @@ import android.util.Log;
 import com.google.android.maps.GeoPoint;
 import com.google.android.maps.OverlayItem;
 import com.sds.android.calendar.CalendarUtils;
+import com.sds.android.calendar.GoogleCalendar;
 
 public class CalendarItemizedOverlay extends SMapItemizedOverlay{
 	
@@ -28,7 +29,14 @@ public class CalendarItemizedOverlay extends SMapItemizedOverlay{
 	@Override
 	protected void onIconTap(int index) {
 		// TODO Auto-generated method stub
-		
+		try {
+			Log.d("kepricon", "start");
+			GoogleCalendar.createEvent("5935", 2010, 05, 27);
+			Log.d("kepricon", "end");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 
