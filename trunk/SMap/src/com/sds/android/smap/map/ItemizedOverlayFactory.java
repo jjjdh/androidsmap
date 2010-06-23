@@ -1,7 +1,6 @@
 package com.sds.android.smap.map;
 
 import android.app.Activity;
-import android.content.Context;
 import android.graphics.drawable.Drawable;
 
 import com.google.android.maps.ItemizedOverlay;

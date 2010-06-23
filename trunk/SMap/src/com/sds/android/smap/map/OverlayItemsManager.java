@@ -1,13 +1,17 @@
 package com.sds.android.smap.map;
 
+import java.security.Provider;
 import java.util.HashMap;
 import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.location.Location;
+import android.location.LocationManager;
 import android.util.Log;
 
+import com.google.android.maps.GeoPoint;
 import com.google.android.maps.ItemizedOverlay;
 import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
@@ -20,6 +24,8 @@ import com.sds.android.smap.R;
  *
  */
 public class OverlayItemsManager {
+	static final int OVERLAY_SIZE = 40;
+	
 	ItemizedOverlay<OverlayItem> currentOverlay = null;
 	int currentId ;
 	HashMap<String,ItemizedOverlay<OverlayItem>> cacheMap = new HashMap<String,ItemizedOverlay<OverlayItem>>();
@@ -27,7 +33,7 @@ public class OverlayItemsManager {
 	MapView mapView;
 	List<Overlay> mapOverlays;
 	HashMap<String, Drawable> drawableMap;
-	 MapController controller ;
+	 
 
 	public OverlayItemsManager() {
 
@@ -40,20 +46,17 @@ public class OverlayItemsManager {
 		initDrawable();
 		
 		mapView = (MapView) caller.findViewById(R.id.mapview);
-		mapView.setBuiltInZoomControls(true);
 		
 		mapOverlays = mapView.getOverlays();
-
-		controller = mapView.getController();
-		controller.setZoom(1);
+		
 	}
 	
 	private void initDrawable() {
 		drawableMap = new HashMap<String, Drawable>();
-		drawableMap.put(String.valueOf(R.id.calendar), caller.getResources().getDrawable(R.drawable.calendar));
-		drawableMap.put(String.valueOf(R.id.contact), caller.getResources().getDrawable(R.drawable.contact));
-		drawableMap.put(String.valueOf(R.id.food), caller.getResources().getDrawable(R.drawable.food));
-		drawableMap.put(String.valueOf(R.id.photo), caller.getResources().getDrawable(R.drawable.photo));
+		drawableMap.put(String.valueOf(R.id.calendar), caller.getResources().getDrawable(R.drawable.overlay_calendar));
+		drawableMap.put(String.valueOf(R.id.contact), caller.getResources().getDrawable(R.drawable.overlay_contact));
+		drawableMap.put(String.valueOf(R.id.food), caller.getResources().getDrawable(R.drawable.overlay_food));
+		drawableMap.put(String.valueOf(R.id.photo), caller.getResources().getDrawable(R.drawable.overlay_photo));
 	}
 	private Drawable getDrawable(int id){
 		return drawableMap.get(String.valueOf(id));
