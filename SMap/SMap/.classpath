@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry exported="true" kind="lib" path="E:/프로젝트자료/안드로이드/ict/gdata-calendar-2.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/프로젝트자료/안드로이드/ict/gdata-client-1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/프로젝트자료/안드로이드/ict/gdata-core-1.0.jar"/>
+	<classpathentry kind="lib" path="E:/프로젝트자료/안드로이드/ict/google-collect-1.0-rc1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
